@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análise e Regularização Elétrica | Botucatu - SP | Técnico Credenciado</title>
-    <meta name="description" content="Técnico em Eletroeletrônica especializado em análise de projetos, assinatura de CRT e regularização de obras elétricas em Botucatu e região. Conformidade com NBR.">
+    <title>Projetos, Homologação Solar e Regularização | Botucatu & Poços de Caldas</title>
+    <meta name="description" content="Escritório técnico especializado em Homologação Solar (CPFL/DME), Projetos Elétricos e Regularização de Imóveis. Parceria para integradores e engenheiros.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,11 @@
     <style>
         /* --- RESET E VARIÁVEIS GLOBAIS --- */
         :root {
-            --primary-color: #0F172A; /* Azul Noturno (Autoridade) */
-            --secondary-color: #334155; /* Grafite (Profissionalismo) */
-            --accent-color: #F97316; /* Laranja Técnico (Ação/Construção) */
+            --primary-color: #0F172A; /* Azul Noturno */
+            --secondary-color: #334155; /* Grafite */
+            --accent-color: #F97316; /* Laranja Técnico */
             --accent-hover: #EA580C;
+            --solar-color: #FBBF24; /* Amarelo Solar */
             --text-color: #1E293B;
             --text-light: #64748B;
             --bg-light: #F8FAFC;
@@ -33,9 +34,7 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -89,9 +88,7 @@
             color: var(--primary-color);
         }
 
-        .section-padding {
-            padding: 80px 0;
-        }
+        .section-padding { padding: 80px 0; }
 
         .section-title {
             text-align: center;
@@ -108,10 +105,6 @@
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        .highlight-text {
-            color: var(--accent-color);
         }
 
         /* --- HEADER --- */
@@ -160,22 +153,20 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1613665813446-82a78c468a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             height: 100vh;
             display: flex;
             align-items: center;
             color: var(--white);
-            margin-top: 60px; /* Offset header */
+            margin-top: 60px;
         }
 
-        .hero-content {
-            max-width: 800px;
-        }
+        .hero-content { max-width: 800px; }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             line-height: 1.2;
             margin-bottom: 20px;
             font-weight: 700;
@@ -188,15 +179,12 @@
             font-family: 'Roboto', sans-serif;
         }
 
-        .hero-btns {
-            display: flex;
-            gap: 20px;
-        }
+        .hero-btns { display: flex; gap: 20px; }
 
         /* --- SERVIÇOS --- */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
@@ -204,538 +192,4 @@
             background: var(--white);
             padding: 40px 30px;
             border-radius: 8px;
-            box-shadow: var(--shadow);
-            border-bottom: 4px solid transparent;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-bottom-color: var(--accent-color);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 25px;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-
-        /* --- REGULARIZAÇÃO --- */
-        .regularizacao {
-            background-color: var(--bg-light);
-        }
-
-        .steps-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            position: relative;
-        }
-
-        .step-item {
-            flex: 1;
-            min-width: 250px;
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-number {
-            background-color: var(--primary-color);
-            color: var(--white);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
-        }
-
-        /* --- PROVAS SOCIAIS (High Impact) --- */
-        .social-proof {
-            background-color: var(--white);
-            padding-bottom: 40px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .testimonial-card {
-            background-color: var(--bg-light);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .client-info h4 {
-            color: var(--primary-color);
-            font-size: 1rem;
-        }
-
-        .client-info span {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            display: block;
-        }
-
-        .stats-bar {
-            background-color: var(--primary-color);
-            padding: 60px 0;
-            color: var(--white);
-            margin-top: 40px;
-            border-radius: 8px;
-        }
-
-        .stats-flex {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        /* Logos Section */
-        .partners-logos {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 60px;
-            opacity: 0.6;
-        }
-        
-        .placeholder-logo {
-            font-weight: bold;
-            color: #94a3b8;
-            border: 2px dashed #cbd5e1;
-            padding: 10px 20px;
-            border-radius: 4px;
-        }
-
-        /* --- RESPONSABILIDADE TÉCNICA --- */
-        .tech-resp {
-            background-color: var(--bg-light);
-            display: flex;
-            align-items: center;
-        }
-
-        .tech-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .tech-text ul {
-            margin-top: 20px;
-        }
-
-        .tech-text li {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .tech-text li i { color: var(--accent-color); }
-
-        .crt-badge {
-            background: var(--white);
-            padding: 40px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
-        }
-
-        .crt-badge i {
-            font-size: 4rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        /* --- CTA FINAL --- */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            text-align: center;
-            color: var(--white);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #020617;
-            color: #94a3b8;
-            padding: 60px 0 20px;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul li a { color: #94a3b8; }
-        .footer-col ul li a:hover { color: var(--accent-color); }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1001;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* --- RESPONSIVIDADE --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background-color: var(--primary-color);
-                flex-direction: column;
-                padding: 20px 0;
-            }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            .tech-content { grid-template-columns: 1fr; }
-            .hero-btns { flex-direction: column; }
-        }
-        
-        /* Animation Classes */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <i class="fa-solid fa-bolt"></i>
-                    <span>Herbert Fernandes</span>
-                </div>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#regularizacao">Regularização</a></li>
-                    <li><a href="#provas-sociais">Depoimentos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato" class="btn btn-primary" style="padding: 8px 16px;">Solicitar Análise</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1>Análise e Assinatura de Projetos Elétricos com Responsabilidade Técnica</h1>
-                <p>Regularização de obras em Poços De Caldas, Botucatu e região com segurança, conformidade NBR e respaldo legal do CFT.</p>
-                <div class="hero-btns">
-                    <a href="https://wa.me/5535998948369" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp</a>
-                    <a href="#contato" class="btn btn-outline">Solicitar Orçamento</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="servicos" class="section-padding">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Serviços Especializados</h2>
-                <p>Soluções técnicas focadas na legalidade e segurança da sua obra.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
-                    <h3>Assinatura Técnica (TRT)</h3>
-                    <p>Emissão de Termo de Responsabilidade Técnica (TRT/CRT) para projetos elétricos, essencial para aprovação em órgãos competentes.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>Análise de Projetos</h3>
-                    <p>Auditoria completa de projetos elétricos residenciais e comerciais, garantindo eficiência e segurança antes da execução.</p>
-                </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fa-solid fa-building-circle-check"></i></div>
-                    <h3>Regularização de Obras</h3>
-                    <p>Adequação técnica de instalações existentes para atender às normas da concessionária e prefeitura de Botucatu.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="regularizacao" class="section-padding regularizacao">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Como Funciona a Regularização?</h2>
-                <p>Processo simplificado para garantir que sua obra esteja 100% legal.</p>
-            </div>
-            <div class="steps-container">
-                <div class="step-item fade-in">
-                    <div class="step-number">1</div>
-                    <h4>Vistoria Técnica</h4>
-                    <p>Visita local para levantamento das instalações e identificação de não-conformidades.</p>
-                </div>
-                <div class="step-item fade-in">
-                    <div class="step-number">2</div>
-                    <h4>Adequação</h4>
-                    <p>Elaboração de relatório técnico indicando os ajustes necessários conforme NBR 5410.</p>
-                </div>
-                <div class="step-item fade-in">
-                    <div class="step-number">3</div>
-                    <h4>Emissão de CRT</h4>
-                    <p>Assinatura do Termo de Responsabilidade Técnica e liberação da documentação legal.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="provas-sociais" class="section-padding social-proof">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Confiança Construída Na Região</h2>
-                <p>O que gestores de obras e proprietários dizem sobre nosso trabalho.</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"A regularização do nosso empreendimento comercial no centro foi rápida. A análise técnica evitou multas graves da prefeitura. Profissionalismo ímpar."</p>
-                    <div class="client-info">
-                        <h4>Carlos Mendes</h4>
-                        <span>Gestor de Obras - Construtora Mendes</span>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Precisava de um TRT com urgência para a ligação de energia definitiva. O atendimento foi ágil e tecnicamente impecável."</p>
-                    <div class="client-info">
-                        <h4>Ana Beatriz Souza</h4>
-                        <span>Arquiteta - Botucatu/SP</span>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Segurança é tudo. Contratei para revisar o projeto elétrico da minha casa e encontramos falhas sérias. Valeu cada centavo."</p>
-                    <div class="client-info">
-                        <h4>Roberto Lima</h4>
-                        <span>Proprietário</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="stats-bar fade-in">
-                <div class="stats-flex">
-                    <div class="stat-item">
-                        <h3 data-target="48">+0</h3>
-                        <p>Projetos Analisados</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 data-target="26">+0</h3>
-                        <p>Obras Regularizadas</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 data-target="100">0%</h3>
-                        <p>Aprovação Normativa</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="partners-logos fade-in">
-                <div class="placeholder-logo">CONSTRUTORA ALIANÇA</div>
-                <div class="placeholder-logo">STUDIO ARQ</div>
-                <div class="placeholder-logo">ENG. CIVIL PARTNERS</div>
-                <div class="placeholder-logo">IMOBILIÁRIA SUL</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="responsabilidade" class="section-padding tech-resp">
-        <div class="container">
-            <div class="tech-content">
-                <div class="tech-text fade-in">
-                    <h2>Responsabilidade Técnica e Segurança Jurídica</h2>
-                    <p>A assinatura de um técnico habilitado não é apenas burocracia, é a garantia de segurança patrimonial e física. Atuo sob rigoroso código de ética do CFT.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-check-circle"></i> Registro CFT Ativo e Regular</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Emissão de TRT/CRT para cada serviço</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Profundo conhecimento da NBR 5410</li>
-                    </ul>
-                </div>
-                <div class="crt-badge fade-in">
-                    <i class="fa-solid fa-id-card-clip"></i>
-                    <h3>Profissional Habilitado</h3>
-                    <p>Registro CFT/CRT Ativo</p>
-                    <small>Consulte a regularidade no site oficial do conselho</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding cta-section">
-        <div class="container fade-in">
-            <h2>Sua obra regularizada com segurança técnica</h2>
-            <p style="color: #e2e8f0; margin-bottom: 30px;">Evite riscos e multas. Garanta a assinatura técnica do seu projeto hoje mesmo.</p>
-            <a href="https://wa.me/5535998948369" class="btn btn-primary" style="background-color: white; color: var(--accent-color); border-color: white;">
-                <i class="fa-brands fa-whatsapp"></i> Entrar em Contato Agora
-            </a>
-        </div>
-    </section>
-
-    <footer id="contato">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Herbert Fernandes</span>
-                    </div>
-                    <p style="margin-top: 15px;">Soluções em eletroeletrônica e regularização de obras para Botucatu e região.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-phone"></i> (35) 99894-8369</li>
-                        <li><i class="fa-solid fa-envelope"></i> herbertfernandes279@gmail.com</li>
-                        <li><i class="fa-solid fa-location-dot"></i> Botucatu - SP & Poços De Caldas - MG</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#regularizacao">Regularização</a></li>
-                        <li><a href="https://cft.org.br/" target="_blank">Consultar CFT</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="text-align: center; border-top: 1px solid #1e293b; padding-top: 20px; margin-top: 20px;">
-                <p>&copy; 2024 Técnico em Eletroeletrônica. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <a href="https://wa.me/5535998948369" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
-
-    <script>
-        // 1. Menu Mobile
-        const menuToggle = document.getElementById('mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // 2. Animação de Scroll (Intersection Observer)
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // Se for a seção de estatísticas, inicia o contador
-                    if(entry.target.querySelector('[data-target]')) {
-                        const counters = entry.target.querySelectorAll('[data-target]');
-                        counters.forEach(counter => {
-                            const updateCount = () => {
-                                const target = +counter.getAttribute('data-target');
-                                const count = +counter.innerText.replace('+', '').replace('%', '');
-                                const inc = target / 100; // velocidade
-
-                                if (count < target) {
-                                    counter.innerText = Math.ceil(count + inc) + (counter.getAttribute('data-target').includes('100') ? '%' : '+');
-                                    setTimeout(updateCount, 20);
-                                } else {
-                                    counter.innerText = target + (counter.getAttribute('data-target').includes('100') ? '%' : '+');
-                                }
-                            };
-                            updateCount();
-                        });
-                    }
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-    </script>
-</body>
-
-</html>
+            box-shadow: var(--shadow
