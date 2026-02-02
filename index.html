@@ -3,30 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenharia de Homologação Solar e Projetos Elétricos | Poços de Caldas & Botucatu - SP | Técnico Credenciado</title>
-    <meta name="description" content="Técnico em Eletroeletrônica especializado em análise de projetos, assinatura de CRT e regularização de obras elétricas em Botucatu e região. Conformidade com NBR.">
+    <meta name="description" content="VantageOS - Agência especializada em Tráfego Pago para Clínicas Odontológicas.">
+    <title>VantageOS | Tráfego Pago para Dentistas</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- RESET E VARIÁVEIS GLOBAIS --- */
+        /* --- VARIÁVEIS --- */
         :root {
-            --primary-color: #0F172A; /* Azul Noturno (Autoridade) */
-            --secondary-color: #334155; /* Grafite (Profissionalismo) */
-            --accent-color: #F97316; /* Laranja Técnico (Ação/Construção) */
-            --accent-hover: #EA580C;
-            --text-color: #1E293B;
-            --text-light: #64748B;
-            --bg-light: #F8FAFC;
-            --white: #FFFFFF;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --primary: #0056b3;
+            --primary-dark: #003d80;
+            --accent: #00d4ff;
+            --cta: #ff6b35;
+            --cta-hover: #e85a26;
+            --bg-light: #f8f9fa;
+            --text-dark: #1a1a1a;
+            --text-grey: #555;
+            --white: #ffffff;
+            --whatsapp-green: #25d366; /* Cor oficial do WhatsApp */
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
             --transition: all 0.3s ease;
         }
 
+        /* --- RESET & GLOBAL --- */
         * {
             margin: 0;
             padding: 0;
@@ -35,46 +38,58 @@
 
         html {
             scroll-behavior: smooth;
+            width: 100%;
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            color: var(--text-color);
+            color: var(--text-dark);
             line-height: 1.6;
             background-color: var(--white);
+            width: 100%;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
         }
 
         a { text-decoration: none; }
         ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
 
-        /* --- UI COMPONENTS --- */
+        /* --- UTILITÁRIOS --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
         .btn {
             display: inline-block;
-            padding: 14px 28px;
-            border-radius: 6px;
+            padding: 14px 32px;
+            border-radius: 50px;
             font-weight: 600;
-            text-align: center;
-            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             transition: var(--transition);
-            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            text-align: center;
         }
 
         .btn-primary {
-            background-color: var(--accent-color);
+            background-color: var(--cta);
             color: var(--white);
-            border: 2px solid var(--accent-color);
+            border: 2px solid var(--cta);
         }
 
         .btn-primary:hover {
-            background-color: var(--accent-hover);
-            border-color: var(--accent-hover);
+            background-color: var(--cta-hover);
+            border-color: var(--cta-hover);
             transform: translateY(-2px);
         }
 
@@ -86,42 +101,37 @@
 
         .btn-outline:hover {
             background-color: var(--white);
-            color: var(--primary-color);
-        }
-
-        .section-padding {
-            padding: 80px 0;
+            color: var(--primary);
         }
 
         .section-title {
             text-align: center;
             margin-bottom: 60px;
+            padding: 0 10px;
         }
 
         .section-title h2 {
-            font-size: 2.25rem;
-            color: var(--primary-color);
+            font-size: 2.2rem;
+            color: var(--primary-dark);
             margin-bottom: 15px;
         }
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
+        .section-title span {
+            color: var(--cta);
         }
-
-        .highlight-text {
-            color: var(--accent-color);
-        }
+        
+        .section-title.light h2 { color: var(--white); }
+        .section-title.light p { color: rgba(255,255,255,0.7); }
 
         /* --- HEADER --- */
         header {
-            background-color: var(--primary-color);
             position: fixed;
-            width: 100%;
             top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
             padding: 15px 0;
         }
 
@@ -132,15 +142,10 @@
         }
 
         .logo {
-            color: var(--white);
             font-size: 1.5rem;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--primary-dark);
         }
-
-        .logo i { color: var(--accent-color); }
 
         .nav-links {
             display: flex;
@@ -149,327 +154,337 @@
         }
 
         .nav-links a {
-            color: #E2E8F0;
+            color: var(--text-dark);
+            font-weight: 500;
             font-size: 0.95rem;
-            transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--accent-color); }
-
-        .menu-toggle { display: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+        }
 
         /* --- HERO SECTION --- */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, rgba(0,31,63,0.9) 0%, rgba(0,86,179,0.85) 100%), url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
+            background-attachment: scroll;
             color: var(--white);
-            margin-top: 60px; /* Offset header */
+            text-align: center;
+            position: relative;
         }
 
         .hero-content {
             max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             line-height: 1.2;
             margin-bottom: 20px;
-            font-weight: 700;
         }
 
         .hero p {
-            font-size: 1.25rem;
-            color: #CBD5E1;
+            font-size: 1.2rem;
             margin-bottom: 40px;
-            font-family: 'Roboto', sans-serif;
+            opacity: 0.95;
         }
 
-        .hero-btns {
+        .hero-buttons {
             display: flex;
             gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* --- SERVIÇOS --- */
+        /* --- SERVICES --- */
+        .services {
+            padding: 80px 0;
+            background: var(--bg-light);
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 30px;
         }
 
         .service-card {
             background: var(--white);
             padding: 40px 30px;
-            border-radius: 8px;
+            border-radius: 12px;
             box-shadow: var(--shadow);
-            border-bottom: 4px solid transparent;
             transition: var(--transition);
-            position: relative;
-            overflow: hidden;
+            text-align: center;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            border-bottom-color: var(--accent-color);
         }
 
         .service-icon {
             font-size: 2.5rem;
-            color: var(--accent-color);
-            margin-bottom: 25px;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
-        .service-card h3 {
-            margin-bottom: 15px;
-            color: var(--secondary-color);
-        }
-
-        /* --- REGULARIZAÇÃO --- */
-        .regularizacao {
-            background-color: var(--bg-light);
-        }
-
-        .steps-container {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            position: relative;
-        }
-
-        .step-item {
-            flex: 1;
-            min-width: 250px;
+        /* --- CASES --- */
+        .cases {
+            padding: 80px 0;
             background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            position: relative;
-            z-index: 2;
         }
 
-        .step-number {
-            background-color: var(--primary-color);
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .case-card {
+            background: var(--bg-light);
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 25px;
+            transition: var(--transition);
+        }
+
+        .case-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .case-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 12px;
+        }
+
+        .case-icon {
+            background: var(--primary);
             color: var(--white);
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-weight: bold;
+            flex-shrink: 0;
         }
 
-        /* --- PROVAS SOCIAIS (High Impact) --- */
-        .social-proof {
-            background-color: var(--white);
-            padding-bottom: 40px;
+        .case-title h4 {
+            font-size: 1rem;
+            color: var(--primary-dark);
+            line-height: 1.3;
+        }
+
+        .case-loc {
+            font-size: 0.8rem;
+            color: var(--text-grey);
+        }
+
+        .case-stats {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .stat-value { font-weight: 700; color: var(--cta); }
+        .stat-highlight { color: #28a745; font-weight: 600; font-size: 0.85rem; }
+
+        /* --- TESTIMONIALS (Grid) --- */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--primary-dark);
+            color: var(--white);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
-            margin-bottom: 60px;
+            margin-top: 40px;
         }
 
         .testimonial-card {
-            background-color: var(--bg-light);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             padding: 30px;
-            border-radius: 8px;
-            border-left: 5px solid var(--accent-color);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .testimonial-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .quote-icon {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+            opacity: 0.8;
         }
 
         .testimonial-text {
-            font-style: italic;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .client-info h4 {
-            color: var(--primary-color);
             font-size: 1rem;
-        }
-
-        .client-info span {
-            font-size: 0.85rem;
-            color: var(--text-light);
-            display: block;
-        }
-
-        .stats-bar {
-            background-color: var(--primary-color);
-            padding: 60px 0;
-            color: var(--white);
-            margin-top: 40px;
-            border-radius: 8px;
-        }
-
-        .stats-flex {
-            display: flex;
-            justify-content: space-around;
-            text-align: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-color);
-        }
-
-        .stat-item p {
-            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
             opacity: 0.9;
         }
 
-        /* Logos Section */
-        .partners-logos {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 60px;
-            opacity: 0.6;
-        }
-        
-        .placeholder-logo {
-            font-weight: bold;
-            color: #94a3b8;
-            border: 2px dashed #cbd5e1;
-            padding: 10px 20px;
-            border-radius: 4px;
-        }
-
-        /* --- RESPONSABILIDADE TÉCNICA --- */
-        .tech-resp {
-            background-color: var(--bg-light);
-            display: flex;
-            align-items: center;
-        }
-
-        .tech-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .tech-text ul {
-            margin-top: 20px;
-        }
-
-        .tech-text li {
-            margin-bottom: 10px;
+        .client-info {
             display: flex;
             align-items: center;
             gap: 10px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
         }
 
-        .tech-text li i { color: var(--accent-color); }
-
-        .crt-badge {
-            background: var(--white);
-            padding: 40px;
-            text-align: center;
-            border-radius: 8px;
-            box-shadow: var(--shadow);
-            border: 1px solid #e2e8f0;
-        }
-
-        .crt-badge i {
-            font-size: 4rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-
-        /* --- CTA FINAL --- */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            text-align: center;
-            color: var(--white);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            background-color: #020617;
-            color: #94a3b8;
-            padding: 60px 0 20px;
-            font-size: 0.9rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-col h4 {
-            color: var(--white);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        .footer-col ul li { margin-bottom: 10px; }
-        .footer-col ul li a { color: #94a3b8; }
-        .footer-col ul li a:hover { color: var(--accent-color); }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
+        .client-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--cta);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-weight: bold;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+        .client-details h5 {
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 2px;
+        }
+        
+        .client-details span {
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        /* --- CTA FINAL --- */
+        .cta-section {
+            padding: 100px 0;
+            background: url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1920&q=80') center/cover;
+            position: relative;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 86, 179, 0.9);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* --- WHATSAPP BUTTON --- */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--whatsapp-green);
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
             font-size: 30px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            z-index: 1001;
-            transition: var(--transition);
+            box-shadow: 2px 2px 3px #999;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
         }
 
         .whatsapp-float:hover {
             transform: scale(1.1);
+            background-color: #128c7e;
+            color: #fff;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #111;
+            color: #aaa;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 0.85rem;
         }
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.2rem; }
+            
             .nav-links {
-                display: none;
-                position: absolute;
+                position: fixed;
                 top: 70px;
-                left: 0;
+                left: -100%;
                 width: 100%;
-                background-color: var(--primary-color);
+                background: var(--white);
                 flex-direction: column;
-                padding: 20px 0;
+                padding: 40px 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                transition: 0.3s ease-in-out;
             }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            .tech-content { grid-template-columns: 1fr; }
-            .hero-btns { flex-direction: column; }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .mobile-toggle { display: block; }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 25px;
+            }
         }
-        
-        /* Animation Classes */
-        .fade-in {
+
+        /* Scroll Reveal Simple */
+        .reveal {
             opacity: 0;
             transform: translateY(20px);
             transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
-        .fade-in.visible {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
@@ -480,264 +495,399 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">
-                    <i class="fa-solid fa-bolt"></i>
-                    <span>Herbert Souza</span>
-                </div>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+                <a href="#" class="logo"><i class="fas fa-chart-line"></i> VantageOS</a>
+                <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
                 <ul class="nav-links">
-                    <li><a href="#inicio">Início</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#regularizacao">Regularização</a></li>
-                    <li><a href="#provas-sociais">Depoimentos</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato" class="btn btn-primary" style="padding: 8px 16px;">Solicitar Análise</a></li>
+                    <li><a href="#cases">Cases</a></li>
+                    <li><a href="#depoimentos">Depoimentos</a></li>
+                    <li><a href="#contato" class="btn btn-primary" style="padding: 10px 20px;">Fale Conosco</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="inicio" class="hero">
-        <div class="container">
-            <div class="hero-content fade-in">
-                <h1>Engenharia de Homologação Solar e Projetos Elétricos</h1>
-                <p>O parceiro técnico de Integradores e Construtoras. Destravamos seus processos de Geração Distribuída na CPFL e DME com agilidade e conformidade técnica.</p>
-                <div class="hero-btns">
-                    <a href="https://wa.me/5535998948369" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp</a>
-                    <a href="#contato" class="btn btn-outline">Solicitar Orçamento</a>
-                </div>
+    <section class="hero">
+        <div class="container hero-content reveal">
+            <h1>Lote a Agenda da Sua Clínica com Pacientes Qualificados</h1>
+            <p>Especialistas em Tráfego Pago e geração massiva de leads para Clínicas Odontológicas.</p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn btn-primary">Gerar Leads Agora</a>
+                <a href="#cases" class="btn btn-outline">Ver Resultados</a>
             </div>
         </div>
     </section>
 
-    <section id="servicos" class="section-padding">
+    <section id="servicos" class="services">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Serviços Especializados</h2>
-                <p>Soluções técnicas focadas na legalidade e segurança da sua obra.</p>
+            <div class="section-title reveal">
+                <h2>Nossos <span>Serviços</span></h2>
+                <p>Estratégias para captar pacientes de implantes, ortodontia e estética.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
-                    <h3>Assinatura Técnica (TRT)</h3>
-                    <p>Emissão de Termo de Responsabilidade Técnica (TRT/CRT) para projetos elétricos, essencial para aprovação em órgãos competentes.</p>
+                <div class="service-card reveal">
+                    <i class="fab fa-facebook-f service-icon"></i>
+                    <h3>Meta Ads</h3>
+                    <p>Campanhas visuais para Facebook e Instagram focadas em procedimentos estéticos.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                    <h3>Análise de Projetos</h3>
-                    <p>Auditoria completa de projetos elétricos residenciais e comerciais, garantindo eficiência e segurança antes da execução.</p>
+                <div class="service-card reveal">
+                    <i class="fab fa-google service-icon"></i>
+                    <h3>Google Ads</h3>
+                    <p>Capture pacientes no momento exato em que buscam por dentistas.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon"><i class="fa-solid fa-building-circle-check"></i></div>
-                    <h3>Regularização de Obras</h3>
-                    <p>Adequação técnica de instalações existentes para atender às normas da concessionária e prefeitura de Botucatu.</p>
+                <div class="service-card reveal">
+                    <i class="fas fa-filter service-icon"></i>
+                    <h3>Qualificação</h3>
+                    <p>Filtros para entregar leads prontos para agendar, não apenas curiosos.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="regularizacao" class="section-padding regularizacao">
-        <div class="container">
-            <div class="section-title fade-in">
-                <h2>Como Funciona a Regularização?</h2>
-                <p>Processo simplificado para garantir que sua obra esteja 100% legal.</p>
-            </div>
-            <div class="steps-container">
-                <div class="step-item fade-in">
-                    <div class="step-number">1</div>
-                    <h4>Vistoria Técnica</h4>
-                    <p>Visita local para levantamento das instalações e identificação de não-conformidades.</p>
-                </div>
-                <div class="step-item fade-in">
-                    <div class="step-number">2</div>
-                    <h4>Adequação</h4>
-                    <p>Elaboração de relatório técnico indicando os ajustes necessários conforme NBR 5410.</p>
-                </div>
-                <div class="step-item fade-in">
-                    <div class="step-number">3</div>
-                    <h4>Emissão de CRT</h4>
-                    <p>Assinatura do Termo de Responsabilidade Técnica e liberação da documentação legal.</p>
+                <div class="service-card reveal">
+                    <i class="fas fa-chart-pie service-icon"></i>
+                    <h3>Analytics</h3>
+                    <p>Relatórios claros para você saber exatamente o retorno sobre seu investimento.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="provas-sociais" class="section-padding social-proof">
+    <section id="cases" class="cases">
         <div class="container">
-            <div class="section-title fade-in">
-                <h2>Confiança Construída Na Região</h2>
-                <p>O que gestores de obras e proprietários dizem sobre nosso trabalho.</p>
+            <div class="section-title reveal">
+                <h2>Resultados <span>Comprovados</span></h2>
+                <p>Confira os dados brutos de performance de 20 clínicas parceiras.</p>
+            </div>
+            
+            <div class="cases-grid">
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso Dental</h4><span class="case-loc">São Paulo, SP</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">250</span></div><div class="stat-highlight">40% mais agendamentos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Clínica OdontoVida</h4><span class="case-loc">Rio de Janeiro, RJ</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads (60 dias):</span><span class="stat-value">320</span></div><div class="stat-highlight">35% conv. agendamento</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Dental Prime</h4><span class="case-loc">Belo Horizonte, MG</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">180</span></div><div class="stat-highlight">50 novos proc. estéticos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorria Sempre</h4><span class="case-loc">Salvador, BA</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">210</span></div><div class="stat-highlight">60% agendaram 1ª consulta</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>OdontoMais</h4><span class="case-loc">Fortaleza, CE</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">150</span></div><div class="stat-highlight">45% de conversão</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Clínica DentalClean</h4><span class="case-loc">Curitiba, PR</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads (2 meses):</span><span class="stat-value">200</span></div><div class="stat-highlight">30% mais consultas recorrentes</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso Perfeito</h4><span class="case-loc">Porto Alegre, RS</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">170</span></div><div class="stat-highlight">25% aumento clareamentos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>OdontoCare</h4><span class="case-loc">Brasília, DF</span></div></div><div class="case-stats"><div class="stat-row"><span>1º Mês:</span><span class="stat-value">220 Leads</span></div><div class="stat-highlight">50 agendamentos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Dente de Ouro</h4><span class="case-loc">Manaus, AM</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">140</span></div><div class="stat-highlight">35% mais consultas aparelho</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso e Saúde</h4><span class="case-loc">Recife, PE</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">180</span></div><div class="stat-highlight">40% agendou consulta</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>OdontoFácil</h4><span class="case-loc">Campinas, SP</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">200</span></div><div class="stat-highlight">60% de aumento no ROI</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Clínica Nova Smile</h4><span class="case-loc">Vitória, ES</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">160</span></div><div class="stat-highlight">45% agend. ortodônticos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso Master</h4><span class="case-loc">Florianópolis, SC</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">140</span></div><div class="stat-highlight">30% mais recorrentes</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Dental Life</h4><span class="case-loc">Goiânia, GO</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">120</span></div><div class="stat-highlight">35 novos implantes</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Dente Claro</h4><span class="case-loc">Belém, PA</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">200</span></div><div class="stat-highlight">50 agendamentos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso Radiante</h4><span class="case-loc">São Luís, MA</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">150</span></div><div class="stat-highlight">40 agend. estética</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>OdontoVip</h4><span class="case-loc">Natal, RN</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">130</span></div><div class="stat-highlight">25% conv. ticket alto</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso Feliz</h4><span class="case-loc">Maceió, AL</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">170</span></div><div class="stat-highlight">60% agend. 1ª consulta</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Dental Premium</h4><span class="case-loc">Porto Velho, RO</span></div></div><div class="case-stats"><div class="stat-row"><span>1ºs 30 dias:</span><span class="stat-value">200</span></div><div class="stat-highlight">50 agendamentos</div></div></div>
+                <div class="case-card reveal"><div class="case-header"><div class="case-icon"><i class="fas fa-tooth"></i></div><div class="case-title"><h4>Sorriso Vital</h4><span class="case-loc">Teresina, PI</span></div></div><div class="case-stats"><div class="stat-row"><span>Leads/mês:</span><span class="stat-value">180</span></div><div class="stat-highlight">45% conv. consultas</div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="testimonials">
+        <div class="container reveal">
+            <div class="section-title light">
+                <h2>O que dizem <span>Nossos Parceiros</span></h2>
+                <p>A opinião de quem transformou o faturamento com nossa metodologia.</p>
             </div>
 
             <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"A regularização do nosso empreendimento comercial no centro foi rápida. A análise técnica evitou multas graves da prefeitura. Profissionalismo ímpar."</p>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"A VantageOS transformou nossa clínica. Estávamos com cadeiras vazias e hoje temos fila de espera. O ROI é inegável."</p>
                     <div class="client-info">
-                        <h4>Carlos Mendes</h4>
-                        <span>Gestor de Obras - Construtora Mendes</span>
+                        <div class="client-avatar">RA</div>
+                        <div class="client-details">
+                            <h5>Dr. Roberto Almeida</h5>
+                            <span>Sorriso Dental - SP</span>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Precisava de um TRT com urgência para a ligação de energia definitiva. O atendimento foi ágil e tecnicamente impecável."</p>
-                    <div class="client-info">
-                        <h4>Ana Beatriz Souza</h4>
-                        <span>Arquiteta - Botucatu/SP</span>
-                    </div>
-                </div>
-                <div class="testimonial-card fade-in">
-                    <p class="testimonial-text">"Segurança é tudo. Contratei para revisar o projeto elétrico da minha casa e encontramos falhas sérias. Valeu cada centavo."</p>
-                    <div class="client-info">
-                        <h4>Roberto Lima</h4>
-                        <span>Proprietário</span>
-                    </div>
-                </div>
-            </div>
 
-            <div class="stats-bar fade-in">
-                <div class="stats-flex">
-                    <div class="stat-item">
-                        <h3 data-target="48">+0</h3>
-                        <p>Projetos Analisados</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 data-target="26">+0</h3>
-                        <p>Obras Regularizadas</p>
-                    </div>
-                    <div class="stat-item">
-                        <h3 data-target="100">0%</h3>
-                        <p>Aprovação Normativa</p>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Impressionante! Recebemos 320 leads em apenas 60 dias. Nunca vi tanto movimento na recepção."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">JM</div>
+                        <div class="client-details">
+                            <h5>Dra. Juliana M.</h5>
+                            <span>Clínica OdontoVida - RJ</span>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="partners-logos fade-in">
-                <div class="placeholder-logo">CONSTRUTORA ALIANÇA</div>
-                <div class="placeholder-logo">STUDIO ARQ</div>
-                <div class="placeholder-logo">ENG. CIVIL PARTNERS</div>
-                <div class="placeholder-logo">IMOBILIÁRIA SUL</div>
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Focamos a campanha em estética e fechamos 50 novos procedimentos em um único mês. Excelente."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">LS</div>
+                        <div class="client-details">
+                            <h5>Dr. Lucas S.</h5>
+                            <span>Dental Prime - MG</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"A taxa de agendamento de 60% para primeira consulta é surreal. A equipe de vendas agradece!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar">FA</div>
+                        <div class="client-details">
+                            <h5>Dra. Fernanda A.</h5>
+                            <span>Sorria Sempre - BA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"A qualidade dos leads é o diferencial. 45% de conversão mudou nosso faturamento."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">CE</div>
+                        <div class="client-details">
+                            <h5>Dr. Carlos E.</h5>
+                            <span>OdontoMais - CE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Em apenas 2 meses, nossas consultas recorrentes aumentaram em 30%. Recomendo demais."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">PB</div>
+                        <div class="client-details">
+                            <h5>Dra. Patrícia B.</h5>
+                            <span>DentalClean - PR</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"A campanha de clareamento foi um sucesso. 25% de aumento direto nos procedimentos."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">TR</div>
+                        <div class="client-details">
+                            <h5>Dr. Tiago R.</h5>
+                            <span>Sorriso Perfeito - RS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"50 agendamentos logo no primeiro mês. O retorno sobre o investimento foi imediato."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">CP</div>
+                        <div class="client-details">
+                            <h5>Dra. Camila P.</h5>
+                            <span>OdontoCare - DF</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"A procura por aparelhos ortodônticos cresceu 35%. Trabalho muito profissional."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">MV</div>
+                        <div class="client-details">
+                            <h5>Dr. Marcos V.</h5>
+                            <span>Dente de Ouro - AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"De 180 leads, conseguimos agendar 40%. O tráfego pago realmente funciona com a VantageOS."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">RL</div>
+                        <div class="client-details">
+                            <h5>Dra. Renata L.</h5>
+                            <span>Sorriso e Saúde - PE</span>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Otimizaram nossas campanhas e o ROI aumentou 60%. Simplesmente fantástico."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">AG</div>
+                        <div class="client-details">
+                            <h5>Dr. André G.</h5>
+                            <span>OdontoFácil - SP</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Agenda de ortodontia lotada. Quase metade dos leads viraram pacientes."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">BC</div>
+                        <div class="client-details">
+                            <h5>Dra. Beatriz C.</h5>
+                            <span>Nova Smile - ES</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Conseguimos trabalhar a fidelização e a recorrência subiu 30%. Ótima parceria."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">FN</div>
+                        <div class="client-details">
+                            <h5>Dr. Felipe N.</h5>
+                            <span>Sorriso Master - SC</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Nosso foco eram implantes e conseguimos 35 novos em um mês. Ticket médio altíssimo."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">MT</div>
+                        <div class="client-details">
+                            <h5>Dra. Mariana T.</h5>
+                            <span>Dental Life - GO</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Simples, direto e eficaz. 50 agendamentos confirmados em Belém no mês passado."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">RJ</div>
+                        <div class="client-details">
+                            <h5>Dr. Ricardo J.</h5>
+                            <span>Dente Claro - PA</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Acertaram em cheio no público de estética. Foram 40 novos procedimentos."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">VO</div>
+                        <div class="client-details">
+                            <h5>Dra. Vanessa O.</h5>
+                            <span>Sorriso Radiante - MA</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Buscávamos pacientes de alto valor e conseguimos uma conversão de 25% nesse nicho."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">GH</div>
+                        <div class="client-details">
+                            <h5>Dr. Gustavo H.</h5>
+                            <span>OdontoVip - RN</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Nunca vi uma taxa de 60% de agendamento de primeira consulta antes. Parabéns!"</p>
+                    <div class="client-info">
+                        <div class="client-avatar">LF</div>
+                        <div class="client-details">
+                            <h5>Dra. Larissa F.</h5>
+                            <span>Sorriso Feliz - AL</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Resultados rápidos. 200 leads nos primeiros 30 dias geraram 50 pacientes na cadeira."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">ED</div>
+                        <div class="client-details">
+                            <h5>Dr. Eduardo D.</h5>
+                            <span>Dental Premium - RO</span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="testimonial-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p class="testimonial-text">"Custo por lead excelente e 45% viraram consultas. Estamos muito satisfeitos."</p>
+                    <div class="client-info">
+                        <div class="client-avatar">CM</div>
+                        <div class="client-details">
+                            <h5>Dra. Cláudia M.</h5>
+                            <span>Sorriso Vital - PI</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <section id="responsabilidade" class="section-padding tech-resp">
-        <div class="container">
-            <div class="tech-content">
-                <div class="tech-text fade-in">
-                    <h2>Responsabilidade Técnica e Segurança Jurídica</h2>
-                    <p>A assinatura de um técnico habilitado não é apenas burocracia, é a garantia de segurança patrimonial e física. Atuo sob rigoroso código de ética do CFT.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-check-circle"></i> Registro CFT Ativo e Regular</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Emissão de TRT/CRT para cada serviço</li>
-                        <li><i class="fa-solid fa-check-circle"></i> Profundo conhecimento da NBR 5410</li>
-                    </ul>
-                </div>
-                <div class="crt-badge fade-in">
-                    <i class="fa-solid fa-id-card-clip"></i>
-                    <h3>Profissional Habilitado</h3>
-                    <p>Registro CFT/CRT Ativo</p>
-                    <small>Consulte a regularidade no site oficial do conselho</small>
-                </div>
-            </div>
+    <section id="contato" class="cta-section">
+        <div class="container cta-content reveal">
+            <h2>Pronto para escalar sua Clínica?</h2>
+            <p style="margin-bottom: 30px;">Solicite uma análise gratuita da sua presença digital.</p>
+            <a href="#" class="btn btn-primary">Solicitar Estratégia</a>
         </div>
     </section>
 
-    <section class="section-padding cta-section">
-        <div class="container fade-in">
-            <h2>Sua obra regularizada com segurança técnica</h2>
-            <p style="color: #e2e8f0; margin-bottom: 30px;">Evite riscos e multas. Garanta a assinatura técnica do seu projeto hoje mesmo.</p>
-            <a href="https://wa.me/5535998948369" class="btn btn-primary" style="background-color: white; color: var(--accent-color); border-color: white;">
-                <i class="fa-brands fa-whatsapp"></i> Entrar em Contato Agora
-            </a>
-        </div>
-    </section>
-
-    <footer id="contato">
+    <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="logo">
-                        <i class="fa-solid fa-bolt"></i>
-                        <span>Herbert Souza</span>
-                    </div>
-                    <p style="margin-top: 15px;">Soluções em eletroeletrônica e regularização de obras para Botucatu e região.</p>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 15px;">VantageOS</h4>
+                    <p>Especialistas em performance digital para o setor odontológico.</p>
                 </div>
-                <div class="footer-col">
-                    <h4>Contato</h4>
-                    <ul>
-                        <li><i class="fa-solid fa-phone"></i> (35) 99894-8369</li>
-                        <li><i class="fa-solid fa-envelope"></i> herbertfernandes279@gmail.com</li>
-                        <li><i class="fa-solid fa-location-dot"></i> Botucatu - SP & Poços De Caldas - MG</li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Links Rápidos</h4>
-                    <ul>
-                        <li><a href="#servicos">Serviços</a></li>
-                        <li><a href="#regularizacao">Regularização</a></li>
-                        <li><a href="https://cft.org.br/" target="_blank">Consultar CFT</a></li>
-                    </ul>
+                <div>
+                    <h4 style="color: #fff; margin-bottom: 15px;">Contato</h4>
+                    <p>contato@vantageos.com.br</p>
                 </div>
             </div>
-            <div style="text-align: center; border-top: 1px solid #1e293b; padding-top: 20px; margin-top: 20px;">
-                <p>&copy; 2024 Técnico em Eletroeletrônica. Todos os direitos reservados.</p>
+            <div class="copyright">
+                &copy; 2019 VantageOS. Todos os direitos reservados.
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/5535998948369" class="whatsapp-float" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
+    <a href="https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20VantageOS" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // 1. Menu Mobile
-        const menuToggle = document.getElementById('mobile-menu');
+        // Menu Mobile
+        const toggleBtn = document.querySelector('.mobile-toggle');
         const navLinks = document.querySelector('.nav-links');
 
-        menuToggle.addEventListener('click', () => {
+        toggleBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
 
-        // 2. Animação de Scroll (Intersection Observer)
-        const observerOptions = {
-            threshold: 0.1
-        };
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
 
+        // Scroll Reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    
-                    // Se for a seção de estatísticas, inicia o contador
-                    if(entry.target.querySelector('[data-target]')) {
-                        const counters = entry.target.querySelectorAll('[data-target]');
-                        counters.forEach(counter => {
-                            const updateCount = () => {
-                                const target = +counter.getAttribute('data-target');
-                                const count = +counter.innerText.replace('+', '').replace('%', '');
-                                const inc = target / 100; // velocidade
-
-                                if (count < target) {
-                                    counter.innerText = Math.ceil(count + inc) + (counter.getAttribute('data-target').includes('100') ? '%' : '+');
-                                    setTimeout(updateCount, 20);
-                                } else {
-                                    counter.innerText = target + (counter.getAttribute('data-target').includes('100') ? '%' : '+');
-                                }
-                            };
-                            updateCount();
-                        });
-                    }
+                    entry.target.classList.add('active');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>
-
-
